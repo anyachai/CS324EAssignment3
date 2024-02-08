@@ -7,7 +7,14 @@ def main():
     allWords = allWordsListMaker(lines)
 
     # Write list of all words to "allwords.txt"
-    writeToAllWords(allWords)
+    writeToFile(allWords, "allwords.txt")
+
+    # Create list of unique words (words that only appear once in text)
+    uniqueWords = uniqueWordsListMaker(allWords)
+
+    # Write list of all unique words to "uniquewords.txt"
+    writeToFile(uniqueWords, "uniquewords.txt")
+
 
 def allWordsListMaker(linesList):
     # Make wordlist
@@ -44,20 +51,43 @@ def allWordsListMaker(linesList):
     # Return the wordlist
     return wordlist
 
-def writeToAllWords(wordList):
+
+def uniqueWordsListMaker(words):
+    # Create two lists to find words that only appear once
+    distinctWords = [] 
+    duplicateWords = [] 
+
+    for word in words:
+
+        # Ignore words that have duplicates
+        if word not in duplicateWords:
+
+            # Label word as unique if it is not already
+            if word not in distinctWords:
+                distinctWords.append(word)
+
+            # If it already labeled unique, then relabel is as not unique 
+            else:
+                distinctWords.remove(word)
+                duplicateWords.append(word)
+
+    return distinctWords
+
+
+def writeToFile(wordList, fileName):
     # Open file
-    writeFile = open("allwords.txt", "w")
+    writeFile = open(fileName, "w")
 
     # Traverse wordlist, add words to file
-    for x in range(len(wordList)):
+    for word in wordList[:-1]:
+        writeFile.write(word + '\n')
 
-        # If at the end of the list just add the current word. Otherwide, add word plus a newline
-        if (x == (len(wordList) - 1)):
-            writeFile.write(wordList[x])
-        else:
-            writeFile.write(wordList[x] + '\n')
+    # Add last word without newline character
+    writeFile.write(wordList[-1])
 
     # Close file
     writeFile.close()
 
-main()
+
+if __name__ == '__main__':
+    main()
