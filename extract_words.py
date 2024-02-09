@@ -15,6 +15,12 @@ def main():
     # Write list of all unique words to "uniquewords.txt"
     writeToFile(uniqueWords, "uniquewords.txt")
 
+    # Create wordFrequency
+    wordFrequency = wordFrequencyListMaker(allWords)
+
+    # Write wordFrequency to "wordFrequency.txt"
+    writeToFile(wordFrequency, "wordFrequency.txt")
+
 
 def allWordsListMaker(linesList):
     # Make wordlist
@@ -50,6 +56,35 @@ def allWordsListMaker(linesList):
 
     # Return the wordlist
     return wordlist
+
+
+def wordFrequencyListMaker(words):
+    # Create frequency dictionary
+    frequencyDict = {}
+
+    # Count the number of times each word appears
+    for word in words:
+        frequencyDict[word] = frequencyDict.get(word, 0) + 1
+
+    # Convert word to list of tuples and sort by the latter element
+    frequencyTuples = list(frequencyDict.items())
+    frequencyTuples.sort(key = lambda x: x[1])
+    wordFrequency = []
+
+    # Count the number of words with the same frequenct
+    while frequencyTuples:
+        frequencyIndex = frequencyTuples[0][1]
+        wordCount = 0
+
+        while frequencyIndex == frequencyTuples[0][1]:
+            wordCount += 1
+            frequencyTuples.pop(0)
+            if not frequencyTuples:
+                break
+
+        wordFrequency.append(f'{frequencyIndex}: {wordCount}')
+
+    return wordFrequency
 
 
 def uniqueWordsListMaker(words):
