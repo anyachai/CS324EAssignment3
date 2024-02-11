@@ -1,1 +1,15 @@
+Python Script - Ben & Ryan
+Breaks down novel into individual words, which are saved in different text files: allwords.txt saves every word on a new line, uniquewords.txt saves words that appear only once, and wordFrequency.txt saves the frequency of words to the number of words with that frequency
 
+Word Cloud - All
+Chose a bird shape because it was the subject of the novel.
+
+Novel Visualization - Ryan
+Prints random unique words in the novel. Words are properly spaced and colors for each word are assigned based on the length of the word (amount of characters). The colors chosen for the words are colors that are rare in birds. Blue is for short words, red for long words, and green for medium words. Times New Roman was used because it's common in academic texts, font size 27 was chosen since it was the smallest font size that was still easily legible.
+
+Extra credit: Colors were assigned based on length of the words, providing more information about each unique word.
+
+Word Frequency - Anya
+Prints a graph of the frequency of words on the x axis and the count of how many words there are with that frequency on the y axis. In order to fit all the frequencies on the canvas, lines were added to indicate x axis breaks. A gradient of colors were used for each bar to show the general trend of counts decreasing overall.
+
+Extra credit: Adding color to the graph to show overall trend, adding x and y axis labels for more information about the data. 
