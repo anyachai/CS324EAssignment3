@@ -57,7 +57,7 @@ void draw() {
     // This prints out a new word
     text(word, col, 28*row);
     // The distance from the left border is updated
-    col += word.length()*13;
+    col += word.length()*13.5;
   }
   noLoop();
 }
