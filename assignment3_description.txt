@@ -5,7 +5,7 @@ Word Cloud - All
 Chose a bird shape because it was the subject of the novel.
 
 Novel Visualization - Ryan
-Prints random unique words in the novel. Words are properly spaced and colors for each word are assigned based on the length of the word (amount of characters). The colors chosen for the words are colors that are rare in birds. Blue is for short words, red for long words, and green for medium words. Times New Roman was used because it's common in academic texts, font size 27 was chosen since it was the smallest font size that was still easily legible.
+Prints random unique words in the novel. Words are properly spaced and colors for each word are assigned based on the length of the word (amount of characters). The colors chosen for the words are colors that are rare in birds. Blue is for short words, red for long words, and green for medium words. (This is akin to the wavelengths of light.) Times New Roman was used because it's common in academic texts, font size 27 was chosen since it was the smallest font size that was still easily legible. Lastly, the screen updates with a new random set of words every time the screen is clicked with a mouse.
 
 Extra credit: Colors were assigned based on length of the words, providing more information about each unique word.
 

@@ -1,11 +1,13 @@
 String[] uniqueWords;
 PFont timesNewRoman;
-int randInt, strLen = 0, row = 1, col = 10;
+int randInt, strLen, row, col;
 String word;
 
 void setup() {
   // Required window size
   size(700,600);
+  // A background color that is easy on the eyes
+  background(#f1f2f6);
   
   // List of words that appear only once in the academic text about birds
   uniqueWords = loadStrings("uniquewords.txt");
@@ -13,9 +15,16 @@ void setup() {
   // I chose Times New Roman since it is a common font in academic texts
   timesNewRoman = createFont("Times New Roman.ttf", 27);
   textFont(timesNewRoman);
+  
+  // Prevent draw from repeating
+  noLoop();
 }
 
 void draw() {
+  // Reset canvas and variables for new set of words
+  background(#f1f2f6);
+  strLen = 0; row = 1; col = 10;
+  
   // The loop keeps going until it hits the break point in the middle
   while (true) {
     
@@ -59,5 +68,11 @@ void draw() {
     // The distance from the left border is updated
     col += word.length()*14;
   }
+  // Stop draw from repeating
   noLoop();
+}
+
+// Restart draw when the screen is clicked
+void mouseClicked() {
+  loop();
 }
