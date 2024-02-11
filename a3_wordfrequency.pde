@@ -10,7 +10,7 @@ void setup() {
   size(745, 900);
   background(255);
   colorMode(HSB, 360, 100, 100);
-  String[] lines = loadStrings("wordFrequency.txt");
+  String[] lines = loadStrings("wordfrequency.txt");
   
   fill(0);
   
