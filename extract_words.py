@@ -18,8 +18,8 @@ def main():
     # Create wordFrequency
     wordFrequency = wordFrequencyListMaker(allWords)
 
-    # Write wordFrequency to "wordFrequency.txt"
-    writeToFile(wordFrequency, "wordFrequency.txt")
+    # Write wordFrequency to "wordfrequency.txt"
+    writeToFile(wordFrequency, "wordfrequency.txt")
 
 
 def allWordsListMaker(linesList):
