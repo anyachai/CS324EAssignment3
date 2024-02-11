@@ -28,7 +28,7 @@ void draw() {
     
     // If length of the row is too long, we move to the next row,
     // starting at the left side of the window
-    if (strLen > 40) {
+    if (strLen > 35) {
       strLen = 0; 
       col = 10;
       row += 1;
@@ -57,7 +57,7 @@ void draw() {
     // This prints out a new word
     text(word, col, 28*row);
     // The distance from the left border is updated
-    col += word.length()*13.5;
+    col += word.length()*14;
   }
   noLoop();
 }
